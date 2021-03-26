@@ -1,0 +1,22 @@
+header{
+    background-color: black;
+    color: blanchedalmond;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 20vw;
+}
+
+footer{
+    background-color: black;
+    color: blanchedalmond;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 20vw;
+}
+.articles{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    
+    
+}
