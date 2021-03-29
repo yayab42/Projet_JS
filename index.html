@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css"
+      rel="stylesheet"
+    />
+
     <title>Accueil</title>
   </head>
   <body>
@@ -12,7 +17,17 @@
 
     <main>
       
-   <!----  <section class="articles">
+      <div
+        class="fotorama"
+        data-transition="slide"
+        data-clicktransition="crossfade"
+      >
+        <img src="https://s.fotorama.io/1.jpg" />
+        <img src="https://s.fotorama.io/2.jpg" />
+        <img src="https://s.fotorama.io/2.jpg" />
+      </div>
+      
+      <!----  <section class="articles">
         <article>
           <a href="#">
             <h2>titre de l'article</h2>
@@ -25,10 +40,9 @@
       </section> -->
     </main>
 
-    <footer>
-        Ceci est un footer
-    </footer>
+    <footer>Ceci est un footer</footer>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
   <script src="script.js"></script>
 </html>
