@@ -27,7 +27,7 @@ $(document).ready(function () {
   loadfeed();
 
   function dltBeforeReload() {
-    $("main section").remove()
+    $("main section").remove();
   }
 
   $("main").prepend(
@@ -35,9 +35,12 @@ $(document).ready(function () {
     //onclick=\"loadfeed()\"
   );
   let button = document.querySelector("#rldbtn");
-  button.addEventListener("click", event => {
-      dltBeforeReload()
-      loadfeed();
-  })
+  button.addEventListener("click", (event) => {
+    dltBeforeReload();
+    loadfeed();
+  });
 
+ /* $("main").prepend(
+    "<div class='fotorama'data-transition='slide' data-clicktransition='crossfade'><img src='https://s.fotorama.io/1.jpg'> <img src='https://s.fotorama.io/2.jpg'> <img src='https://s.fotorama.io/2.jpg'></div>"
+  );*/
 });
