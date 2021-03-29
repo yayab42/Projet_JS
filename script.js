@@ -11,7 +11,7 @@ $(document).ready(function () {
               element.metacriticLink +
               "' target='_blank'><h2>" +
               element.title +
-              "</h2> <img src='https://picsum.photos/200' alt='" +
+              "</h2> <img src='https://media.senscritique.com/media/000017816725/source_big/Crash_Bandicoot.png' widht='200' height='200' alt='" +
               element.title +
               "'s image'/> </a> <p>score Metacritic :" +
               element.metacriticScore +
@@ -29,18 +29,60 @@ $(document).ready(function () {
   function dltBeforeReload() {
     $("main section").remove();
   }
+  function form (){
+  $("<div class='form'><form id='form'><div><label for='name'>Nom du jeu </label><input type='text'\
+    name='name' id='name' required></div><div><label for='note'>Note ( entre 0 et 100 ):</label><input type='number'\
+     id='note' name='quantity' min='0' max='100'></div>\
+     <button type='button' value='Envoyer' id='submit'>Envoyer</button></form></div>").appendTo(".formbtn")
+  }
 
-  $("main").prepend(
-    "<div id='rldbtn'><button><p>Recharger</p></button></div>"
+function deleteForm(){
+  $("main .formbtn .form").remove();
+}
+
+$("<button id='rld'><p>Ajouter une review</p></button>").appendTo(".formbtn")
+let formbtn = document.querySelector("#rld");
+  formbtn.addEventListener("click", (event) => {
+    deleteForm();
+    form();
+    $('#submit').click(function(){
+      let data = [$('#name').val(), $('#note').val()]
+      console.log(data)
+        $(
+          "<article><a><h2>" +
+            data[0] +
+            "</h2> <img src='https://media.senscritique.com/media/000017816725/source_big/Crash_Bandicoot.png' widht='200' height='200' alt='" +
+            data[0] +
+            "'s image'/> </a> <p>score Metacritic :" +
+            data[1] +
+            "</p></article>"
+        ).appendTo("main section");
+        console.log(data[0])
+      ;
+
+    })
+  })
+
+  $(".rld").prepend(
+    "<button><p>Recharger</p></button>"
     //onclick=\"loadfeed()\"
   );
-  let button = document.querySelector("#rldbtn");
+  let button = document.querySelector(".rld");
   button.addEventListener("click", (event) => {
     dltBeforeReload();
     loadfeed();
   });
 
- /* $("main").prepend(
-    "<div class='fotorama'data-transition='slide' data-clicktransition='crossfade'><img src='https://s.fotorama.io/1.jpg'> <img src='https://s.fotorama.io/2.jpg'> <img src='https://s.fotorama.io/2.jpg'></div>"
-  );*/
+
+  /*form.onsubmit = function(e){
+    e.preventDefault();
+    let = userGameName = document.getElementById('name').value
+    console.log(userGameName)
+
+
+  }
+*/
+
+
+
 });
