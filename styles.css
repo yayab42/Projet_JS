@@ -62,3 +62,27 @@ article{
     width: 6vw;
     height: 2vw;
 }
+
+.imgGalerie{
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.imgGalerie img{
+    height: 100vh;
+    width: auto;
+}
+
+
+.imgsGalerie{
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap;
+}
+
+.imgsGalerie img{
+    height: 20vw;
+    width: auto;
+}
