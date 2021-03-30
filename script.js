@@ -1,4 +1,6 @@
 $(document).ready(function () {
+  //Définition de la fonction récupérant les données API et populant le HTML
+  
   function loadfeed() {
     $("<section class=articles> </section>").appendTo("main");
     $.getJSON("https://www.cheapshark.com/api/1.0/deals?&upperPrice=10").done(
@@ -17,18 +19,19 @@ $(document).ready(function () {
               element.metacriticScore +
               "</p></article>"
           ).appendTo("main section");
-          //console.log(element.title)
-          //console.log(element.metacriticLink)
         });
       }
     );
   }
-
+//Appel de la fonction pour populer le feed
   loadfeed();
 
+//Définition de la fonction pour supprimer le feed
   function dltBeforeReload() {
     $("main section").remove();
   }
+
+  //Définition de la fonction créant le formulaire d'ajout d'articles
   function form (){
   $("<div class='form'><form id='form'><div><label for='name'>Nom du jeu </label><input type='text'\
     name='name' id='name' required></div><div><label for='note'>Note ( entre 0 et 100 ):</label><input type='number'\
@@ -36,13 +39,17 @@ $(document).ready(function () {
      <button type='button' value='Envoyer' id='submit'>Envoyer</button></form></div>").appendTo(".formbtn")
   }
 
+//Définition de la fonction pour supprimer le formulaire
 function deleteForm(){
   $("main .formbtn .form").remove();
 }
 
+//Création du bouton pour appeller le formulaire 
 $("<button id='rld'><p>Ajouter une review</p></button>").appendTo(".formbtn")
 let formbtn = document.querySelector("#rld");
-  formbtn.addEventListener("click", (event) => {
+  
+//Appel des fonctions suppression du formulaire et création du formulaire en cas de clic sur le bouton form
+formbtn.addEventListener("click", (event) => {
     deleteForm();
     form();
     $('#submit').click(function(){
@@ -62,27 +69,17 @@ let formbtn = document.querySelector("#rld");
 
     })
   })
-
+//Création du bouton pour appeler le reload
   $(".rld").prepend(
     "<button><p>Recharger</p></button>"
-    //onclick=\"loadfeed()\"
   );
+
+  //Appel des fonctions delete feed et chargement du feed en cas de clic sur bouton reload
   let button = document.querySelector(".rld");
   button.addEventListener("click", (event) => {
     dltBeforeReload();
     loadfeed();
   });
-
-
-  /*form.onsubmit = function(e){
-    e.preventDefault();
-    let = userGameName = document.getElementById('name').value
-    console.log(userGameName)
-
-
-  }
-*/
-
 
 
 });
