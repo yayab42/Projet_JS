@@ -1,18 +1,18 @@
 $(document).ready(function(){
 //Création du bouton mosaique et changement de class liée au css mosaique en cas de  clic sur bouton
-$("main").prepend("<button id='mosaic'>Mosaic</button>")
+$("<button id='mosaic'>Mosaic</button>").appendTo(".btn")
 let mosaicbtn = document.querySelector("#mosaic");
   mosaicbtn.addEventListener("click", (event) => {
-    $("main div").removeClass()
-    $("main div").addClass("imgsGalerie")
+    $("#imgClass").removeClass("imgGalerie")
+    $("#imgClass").addClass("imgsGalerie")
     
   })
 //Création du bouton colonne et changement de class liée au css colonne en cas de clic sur bouton
-  $("main").prepend("<button id='column'>Column</button>")
+  $("<button id='column'>Column</button>").appendTo(".btn")
 let columnbtn = document.querySelector("#column");
   columnbtn.addEventListener("click", (event) => {
-    $("main div").removeClass()
-    $("main div").addClass("imgGalerie")
+    $("#imgClass").removeClass("imgsGalerie")
+    $("#imgClass").addClass("imgGalerie")
     
   })
 
