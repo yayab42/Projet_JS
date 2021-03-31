@@ -47,7 +47,10 @@ function deleteForm(){
 //Création du bouton pour appeller le formulaire 
 $("<button id='rld'><p>Ajouter une review</p></button>").appendTo(".formbtn")
 let formbtn = document.querySelector("#rld");
-  
+
+function deletePost(currentEl){
+  currentEl.parentElement.remove();
+}
 //Appel des fonctions suppression du formulaire et création du formulaire en cas de clic sur le bouton form
 formbtn.addEventListener("click", (event) => {
     deleteForm();
@@ -56,7 +59,7 @@ formbtn.addEventListener("click", (event) => {
       let data = [$('#name').val(), $('#note').val()]
       console.log(data)
         $(
-          "<article><a><h2>" +
+          "<article><button class='dlt' onclick='deletePost(this)'>delete</button><a><h2>" +
             data[0] +
             "</h2> <img src='https://media.senscritique.com/media/000017816725/source_big/Crash_Bandicoot.png' widht='200' height='200' alt='" +
             data[0] +
