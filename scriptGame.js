@@ -48,7 +48,7 @@ $(document).ready(function () {
     let playerInput = prompt(
       "Your choice (rock, paper, scissors ?)"
     ).toLowerCase();
-    let playerChoice = "";
+    let playerChoice = playerInput;
     let compchoice = "";
 
     getPlayerChoice(playerInput);
