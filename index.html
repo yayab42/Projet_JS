@@ -18,7 +18,15 @@
     <title>Accueil</title>
   </head>
   <body>
-    <header>Critiqueuse <br> <br> la référence des critiques <br> désastreuses</header>
+    <header> Critiqueuse <br> <br> la référence des critiques <br> désastreuses
+      <div class="dropdown">
+        <button onclick="dropDown()" class="dropbtn">Menu</button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="index.html">Accueil</a>
+          <a href="galery.html">Galerie</a>
+          <a href="Jeux.html">Jeux</a>
+        </div>
+      </div></header>
 
     <main>
       <div
@@ -52,4 +60,5 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
   <script src="script.js"></script>
+  <script src="scriptDropDown.js"></script>
 </html>
