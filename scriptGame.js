@@ -61,6 +61,7 @@ $(document).ready(function () {
       countComp = countComp + 1;
     }
 
+
     $("main").append(
       "<div class='result'><p>Vous avez choisi : " +
         playerChoice +
